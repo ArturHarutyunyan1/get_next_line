@@ -7,7 +7,16 @@
 #include <string.h>
 #include <fcntl.h>
 
-char *get_next_line(int fd);
+typedef struct s_list
+{
+    void *content;
+    struct s_list *next;
+} t_list;
+
+// char *get_next_line(int fd);
+t_list *read_file(int fd);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
 
