@@ -65,13 +65,13 @@ char	*extract_line_from_buffer(char *buffer)
 
 	i = 0;
 	j = 0;
+	while (buffer[i] && buffer[i] != '\n')
+		i++;
 	if (!buffer[i])
 	{
 		free (buffer);
 		return (NULL);
 	}
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
 	line = ft_calloc((ft_strlen(buffer) - i + 1), sizeof(char));
 	i++;
 	while (buffer[i])
