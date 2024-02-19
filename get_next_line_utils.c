@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arturhar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/19 10:55:23 by arturhar          #+#    #+#             */
+/*   Updated: 2024/01/22 10:57:07 by arturhar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "get_next_line.h"
 
 size_t	ft_strlen(const char *str)
@@ -13,8 +24,8 @@ size_t	ft_strlen(const char *str)
 void	*ft_memset(void *str, int c, size_t n)
 {
 	unsigned char	val;
-	char		*ret;
-	size_t		i;
+	char			*ret;
+	size_t			i;
 
 	i = 0;
 	ret = (char *)str;

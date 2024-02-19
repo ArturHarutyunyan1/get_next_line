@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arturhar <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/19 10:55:23 by arturhar          #+#    #+#             */
+/*   Updated: 2024/01/22 10:57:07 by arturhar         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "get_next_line.h"
 
 char	*ft_join(char *buffer, char *buf)
@@ -12,7 +23,7 @@ char	*ft_join(char *buffer, char *buf)
 char	*read_file(int fd, char *buf)
 {
 	char	*buffer;
-	int	bytes_read;
+	int		bytes_read;
 
 	if (!buf)
 		buf = ft_calloc(1, 1);
@@ -29,7 +40,7 @@ char	*read_file(int fd, char *buf)
 		buffer[bytes_read] = 0;
 		buf = ft_join(buf, buffer);
 		if (ft_strchr(buffer, '\n'))
-			break;
+			break ;
 	}
 	free (buffer);
 	return (buf);
@@ -38,7 +49,7 @@ char	*read_file(int fd, char *buf)
 char	*get_line_from_buffer(char *buffer)
 {
 	char	*line;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!buffer[i])
@@ -60,8 +71,8 @@ char	*get_line_from_buffer(char *buffer)
 char	*extract_line_from_buffer(char *buffer)
 {
 	char	*line;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -98,4 +109,3 @@ char	*get_next_line(int fd)
 	buffer = extract_line_from_buffer(buffer);
 	return (line);
 }
-
